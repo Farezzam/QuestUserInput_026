@@ -11,8 +11,10 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -48,7 +50,7 @@ fun FormDataDiri(modifier: Modifier
                 Row(modifier = Modifier.selectable(
                    selected = textJK == item,
                     onClick = {textJK = item}
-                ), verticalAlignment = Alignment.CenterHorizontally){
+                ), verticalAlignment = Alignment.CenterVertically){
                     RadioButton(
                         selected = textJK == item,
                         onClick = {
@@ -58,5 +60,14 @@ fun FormDataDiri(modifier: Modifier
                 }
             }
         }
+        OutlinedTextField(
+            value = textalamat,
+            singleLine = true,
+            modifier = Modifier.width(250.dp),
+            label = {Text(text = "alamat Lengkap")},
+            onValueChange = {
+                textalamat = it
+            }
+        )
     }
 }
