@@ -73,6 +73,7 @@ fun FormDataDiri(modifier: Modifier
         OutlinedTextField(
             value = textalamat,
             singleLine = true,
+            shape = MaterialTheme.shapes.large,
             modifier = Modifier.width(250.dp),
             label = {Text(text = "alamat Lengkap")},
             onValueChange = {
@@ -90,7 +91,7 @@ fun FormDataDiri(modifier: Modifier
 
         Button (
             modifier = Modifier.fillMaxWidth(1f),
-            enabled = textalamat.isEmpty(),
+            enabled = textalamat.isNotEmpty(),
             onClick = {
                 nama=textNama
                 jenis=textJK
@@ -110,7 +111,7 @@ fun FormDataDiri(modifier: Modifier
 
         ElevatedCard(
             elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
-            colors = CardDefaults.cardColors(containerColor = Color.Blue),
+            colors = CardDefaults.cardColors(containerColor = Color.Black),
             modifier = Modifier
                 .height(100.dp)
                 .width(300.dp)
